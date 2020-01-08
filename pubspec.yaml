@@ -23,10 +23,15 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  dio: ^3.0.0
+  intl: ^0.15.7
+  image_picker: ^0.4.10
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  intl_translation: ^0.17.2
 
 
 # For information on the generic Dart part of this file, see the
@@ -42,7 +47,27 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/
+    - images/feed/
+    - images/profile/
+
+#  fonts:
+#    - family: Montserrat
+#      fonts:
+#        - asset: fonts/montserrat/Montserrat-Regular.ttf
+#        - asset: fonts/montserrat/Montserrat-Medium.ttf
+#          weight: 400
+#        - asset: fonts/montserrat/Montserrat-Italic.ttf
+#          style: italic
+#        - asset: fonts/montserrat/Montserrat-Light.ttf
+#          weight: 200
+#        - asset: fonts/montserrat/Montserrat-SemiBold.ttf
+#          weight: 500
+#        - asset: fonts/montserrat/Montserrat-Bold.ttf
+#          weight: 700
+#    - family: Icons
+#      fonts:
+#        - asset: fonts/icons.ttf
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

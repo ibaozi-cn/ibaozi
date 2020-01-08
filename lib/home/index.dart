@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ibaozi/home/home.dart';
-import 'package:ibaozi/home/my.dart';
+import 'package:ibaozi/signup/Sign.dart';
+import 'package:ibaozi/util/SizeUtil.dart';
+
+import 'home.dart';
+import 'my.dart';
 
 class Index extends StatefulWidget {
   @override
@@ -11,7 +14,12 @@ class Index extends StatefulWidget {
 
 class _IndexState extends State<Index> {
   int _currentIndex = 0;
-  final List<Widget> _children = [Home(), My()];
+
+  final List<Widget> _children = [
+    Home(),
+    My(),
+    SignPage()
+  ];
 
   void onTabTapped(int index) {
     setState(() {
@@ -21,17 +29,16 @@ class _IndexState extends State<Index> {
 
   @override
   Widget build(BuildContext context) {
+    SizeUtil.size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: Text("ibaozi"),
-      ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('主页')),
-          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('我的'))
+          BottomNavigationBarItem(icon: Icon(Icons.add_box), title: Text('博客')),
+          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('我的')),
         ],
       ),
     );
