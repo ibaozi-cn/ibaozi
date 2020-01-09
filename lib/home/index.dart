@@ -36,7 +36,7 @@ class _IndexState extends State<Index> {
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('主页')),
+          BottomNavigationBarItem(icon: Icon(Icons.apps), title: Text('博主')),
           BottomNavigationBarItem(icon: Icon(Icons.add_box), title: Text('博客')),
           BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('我的')),
         ],
