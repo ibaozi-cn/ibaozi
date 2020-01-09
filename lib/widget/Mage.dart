@@ -5,8 +5,10 @@ import 'package:ibaozi/const/color_const.dart';
 import 'package:ibaozi/const/gradient_const.dart';
 import 'package:ibaozi/util/SizeUtil.dart';
 import 'package:ibaozi/widget/custom/top_bar.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'custom/profile_const.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Mage extends StatefulWidget {
   @override
@@ -215,7 +217,9 @@ class _MageState extends State<Mage> {
           borderRadius: new BorderRadius.circular(100.0),
         ),
         child: InkWell(
-          onTap: () => debugPrint('Follow pressed'),
+          onTap: () => {
+            launch("https://superandroid.pro/")
+          },
           splashColor: ProfileColors.COLOR_GREY,
           highlightColor: ProfileColors.COLOR_GREY,
           borderRadius: new BorderRadius.circular(100.0),
