@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ibaozi/const/gradient_const.dart';
+import 'package:ibaozi/widget/Default.dart';
 import 'package:ibaozi/widget/Mage.dart';
-import 'package:ibaozi/widget/XiaoZhang.dart';
+import 'package:ibaozi/data/friend.dart';
+import 'package:ibaozi/widget/xiaozhang/xiaozhang_details_page.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -24,7 +26,19 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     widgets.add(Mage());
-    widgets.add(XiaoZhang());
+    widgets.add(XiaoZhangDetailsPage(
+        Friend(
+            avatar: "images/avatar_xiaozhang.jpg",
+            name: "i校长",
+            location: "北京",
+            email: "zzy0523@gmail.com"),
+        avatarTag: 0));
+    widgets.add(Default());
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override
@@ -60,16 +74,16 @@ class _HomeState extends State<Home> {
         transform: Matrix4.identity()..rotateX(_currentPageValue - position),
         child: Container(
           child: Center(
-            child:  _getPageByIndex(position),
+            child: _getPageByIndex(position),
           ),
         ),
       );
-    } else if (position == _currentPageValue.floor() + 1){
+    } else if (position == _currentPageValue.floor() + 1) {
       return Transform(
         transform: Matrix4.identity()..rotateX(_currentPageValue - position),
         child: Container(
           child: Center(
-            child:  _getPageByIndex(position),
+            child: _getPageByIndex(position),
           ),
         ),
       );
