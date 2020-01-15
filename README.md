@@ -1,20 +1,21 @@
 # ibaozi
 
-A new Flutter project.
+基于flutter，开发同时兼容web、android、ios的一款应用，主要实现个人博客，博主推荐，MarkDown写博客，浏览博客，发布博客等功能。
+地址：ibaozi.cn 
 
-## Getting Started
+## UI设计
 
-This project is a starting point for a Flutter application.
+### Phone & Web 
+手机和web共用一套UI，如下：
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
+![image](https://github.com/Papeone/ibaozi/raw/dev/image/account.jpeg)
+![image](https://github.com/Papeone/ibaozi/raw/dev/image/any.jpeg)
+![image](https://github.com/Papeone/ibaozi/raw/dev/image/any-web.jpeg)
+![image](https://github.com/Papeone/ibaozi/raw/dev/image/blog.jpeg)
+![image](https://github.com/Papeone/ibaozi/raw/dev/image/marco.jpeg)
+![image](https://github.com/Papeone/ibaozi/raw/dev/image/marco-web.jpeg)
+![image](https://github.com/Papeone/ibaozi/raw/dev/image/xiaozhang.jpeg)
+![image](https://github.com/Papeone/ibaozi/raw/dev/image/xiaozhang-web.jpeg)
 
 
 Test

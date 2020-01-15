@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wave_progress_widget/wave_progress.dart';
 
 class PortfolioShowcase extends StatelessWidget {
-
   var theme;
-  var textTheme ;
+  var textTheme;
 
   List<Widget> _buildItems() {
     var items = <Widget>[];
@@ -13,7 +12,10 @@ class PortfolioShowcase extends StatelessWidget {
         height: 168.0,
         child: Stack(
           children: <Widget>[
-            WaveProgress(180.0, Colors.blueAccent, Colors.blueAccent, 80),
+            Center(
+              child:
+                  WaveProgress(180.0, Colors.blueAccent, Colors.blueAccent, 80),
+            ),
             Center(
               child: Text(
                 'Java',
@@ -28,7 +30,9 @@ class PortfolioShowcase extends StatelessWidget {
       height: 168.0,
       child: Stack(
         children: <Widget>[
-          WaveProgress(180.0, Colors.greenAccent, Colors.greenAccent, 40),
+          Center(
+              child: WaveProgress(
+                  180.0, Colors.greenAccent, Colors.greenAccent, 40)),
           Center(
             child: Text(
               'Flutter',
@@ -40,11 +44,14 @@ class PortfolioShowcase extends StatelessWidget {
     );
 
     var contain2 = Container(
-      width: 168.0,
-      height: 168.0,
+        width: 168.0,
+        height: 168.0,
         child: Stack(
           children: <Widget>[
-            WaveProgress(180.0, Colors.amberAccent, Colors.amberAccent, 90),
+            Center(
+              child: WaveProgress(
+                  180.0, Colors.amberAccent, Colors.amberAccent, 90),
+            ),
             Center(
               child: Text(
                 'Kotlin',
@@ -52,15 +59,17 @@ class PortfolioShowcase extends StatelessWidget {
               ),
             )
           ],
-        )
-    );
+        ));
 
     var contain3 = Container(
-      width: 168.0,
-      height: 168.0,
+        width: 168.0,
+        height: 168.0,
         child: Stack(
           children: <Widget>[
-            WaveProgress(180.0, Colors.deepOrangeAccent, Colors.deepOrangeAccent, 30),
+            Center(
+              child: WaveProgress(
+                  180.0, Colors.deepOrangeAccent, Colors.deepOrangeAccent, 30),
+            ),
             Center(
               child: Text(
                 'Python',
@@ -68,15 +77,17 @@ class PortfolioShowcase extends StatelessWidget {
               ),
             )
           ],
-        )
-    );
+        ));
 
     var contain4 = Container(
         width: 168.0,
         height: 168.0,
         child: Stack(
           children: <Widget>[
-            WaveProgress(180.0, Colors.deepPurpleAccent, Colors.deepPurpleAccent, 70),
+            Center(
+              child: WaveProgress(
+                  180.0, Colors.deepPurpleAccent, Colors.deepPurpleAccent, 70),
+            ),
             Center(
               child: Text(
                 'JS',
@@ -84,15 +95,17 @@ class PortfolioShowcase extends StatelessWidget {
               ),
             )
           ],
-        )
-    );
+        ));
 
     var contain5 = Container(
         width: 168.0,
         height: 168.0,
         child: Stack(
           children: <Widget>[
-            WaveProgress(180.0, Colors.cyanAccent, Colors.cyanAccent, 50),
+            Center(
+              child:
+                  WaveProgress(180.0, Colors.cyanAccent, Colors.cyanAccent, 50),
+            ),
             Center(
               child: Text(
                 'NodeJs',
@@ -100,10 +113,7 @@ class PortfolioShowcase extends StatelessWidget {
               ),
             )
           ],
-        )
-    );
-
-
+        ));
 
     items.add(contain);
     items.add(contain1);
