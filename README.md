@@ -10,19 +10,19 @@
 手机和web共用一套UI，如下：
 
 <p align="center">
-	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/account.jpeg" alt="Sample"  width="360" height="640">
-	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/any.jpeg" alt="Sample"  width="360" height="640">
-	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/any-web.jpg" alt="Sample"  width="1080" height="640">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/account.jpeg" alt="Sample"  width="360" height="680">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/any.jpeg" alt="Sample"  width="360" height="680">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/any-web.jpg" alt="Sample"  width="1080" height="680">
 </p>
 <p align="center">
-	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/blog.jpeg" alt="Sample"  width="360" height="640">
-	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/marco.jpg" alt="Sample"  width="360" height="640">
-	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/marco-web.jpg" alt="Sample"  width="1080" height="640">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/blog.jpeg" alt="Sample"  width="360" height="680">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/marco.jpg" alt="Sample"  width="360" height="680">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/marco-web.jpg" alt="Sample"  width="1080" height="680">
 </p>
 
 <p align="center">
-	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang.jpeg" alt="Sample"  width="360" height="640">
-	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang-web.jpg" alt="Sample"  width="1080" height="640">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang.jpeg" alt="Sample"  width="360" height="680">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang-web.jpg" alt="Sample"  width="1080" height="680">
 </p>
 
 Test
