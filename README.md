@@ -23,4 +23,14 @@
 	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang-web.jpg" alt="Sample"  width="1080" height="680">
 </p>
 
-Test
+## 功能设计
+>博主
+>>A博主
+>>B博主
+>博客
+>>博客列表
+>>博客详情
+>>写博客
+>我的
+>>登录
+>>设置
