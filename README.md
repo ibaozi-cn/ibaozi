@@ -10,7 +10,6 @@
 手机和web共用一套UI，如下：
 
 <p align="center">
-	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/account.jpeg" alt="Sample"  width="360" height="680">
 	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/any.jpeg" alt="Sample"  width="360" height="680">
 	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/any-web.jpg" alt="Sample"  width="1080" height="680">
 </p>
