@@ -18,5 +18,11 @@
 ![image](https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang.jpeg)
 ![image](https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang-web.jpg)
 
+<p align="center">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/account.jpeg" alt="Sample"  width="250" height="140">
+	<p align="center">
+		<em>图片示例2</em>
+	</p>
+</p>
 
 Test
