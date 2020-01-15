@@ -11,51 +11,27 @@
 
 <p align="left">
 	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/account.jpeg" alt="Sample"  width="360" height="640">
-	<p align="center">
-		<em>账号</em>
-	</p>
-</p>
-<p align="left">
 	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/any.jpeg" alt="Sample"  width="360" height="640">
-	<p align="center">
-		<em>账号</em>
-	</p>
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/any-web.jpg" alt="Sample"  width="360" height="640">
 </p>
 <p align="left">
-	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/any-web.jpg" alt="Sample"  width="360" height="640">
-	<p align="center">
-		<em>账号</em>
-	</p>
+</p>
+<p align="left">
 </p>
 <p align="left">
 	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/blog.jpeg" alt="Sample"  width="360" height="640">
-	<p align="center">
-		<em>账号</em>
-	</p>
 </p>
 <p align="left">
 	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/marco.jpg" alt="Sample"  width="360" height="640">
-	<p align="center">
-		<em>账号</em>
-	</p>
 </p>
 <p align="left">
 	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/marco-web.jpg" alt="Sample"  width="360" height="640">
-	<p align="center">
-		<em>账号</em>
-	</p>
 </p>
 <p align="left">
 	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang.jpeg" alt="Sample"  width="360" height="640">
-	<p align="center">
-		<em>账号</em>
-	</p>
 </p>
 <p align="left">
 	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang-web.jpg" alt="Sample"  width="360" height="640">
-	<p align="center">
-		<em>账号</em>
-	</p>
 </p>
 
 Test
