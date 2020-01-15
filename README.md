@@ -9,19 +9,52 @@
 ### Phone & Web 
 手机和web共用一套UI，如下：
 
-![image](https://github.com/Papeone/ibaozi/raw/dev/file/account.jpeg){:height="100" width="100"}
-![image](https://github.com/Papeone/ibaozi/raw/dev/file/any.jpeg)
-![image](https://github.com/Papeone/ibaozi/raw/dev/file/any-web.jpg)
-![image](https://github.com/Papeone/ibaozi/raw/dev/file/blog.jpeg)
-![image](https://github.com/Papeone/ibaozi/raw/dev/file/marco.jpg)
-![image](https://github.com/Papeone/ibaozi/raw/dev/file/marco-web.jpg)
-![image](https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang.jpeg)
-![image](https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang-web.jpg)
-
-<p align="center">
-	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/account.jpeg" alt="Sample"  width="720" height="1080">
+<p align="left">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/account.jpeg" alt="Sample"  width="360" height="640">
 	<p align="center">
-		<em>图片示例2</em>
+		<em>账号</em>
+	</p>
+</p>
+<p align="left">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/any.jpeg" alt="Sample"  width="360" height="640">
+	<p align="center">
+		<em>账号</em>
+	</p>
+</p>
+<p align="left">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/any-web.jpg" alt="Sample"  width="360" height="640">
+	<p align="center">
+		<em>账号</em>
+	</p>
+</p>
+<p align="left">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/blog.jpeg" alt="Sample"  width="360" height="640">
+	<p align="center">
+		<em>账号</em>
+	</p>
+</p>
+<p align="left">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/marco.jpg" alt="Sample"  width="360" height="640">
+	<p align="center">
+		<em>账号</em>
+	</p>
+</p>
+<p align="left">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/marco-web.jpg" alt="Sample"  width="360" height="640">
+	<p align="center">
+		<em>账号</em>
+	</p>
+</p>
+<p align="left">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang.jpeg" alt="Sample"  width="360" height="640">
+	<p align="center">
+		<em>账号</em>
+	</p>
+</p>
+<p align="left">
+	<img src="https://github.com/Papeone/ibaozi/raw/dev/file/xiaozhang-web.jpg" alt="Sample"  width="360" height="640">
+	<p align="center">
+		<em>账号</em>
 	</p>
 </p>
 
