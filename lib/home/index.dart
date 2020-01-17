@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ibaozi/signup/Sign.dart';
+import 'package:ibaozi/blog/blog_detai.dart';
+import 'package:ibaozi/blog/blog_lists.dart';
+import 'package:ibaozi/signup/Login.dart';
 import 'package:ibaozi/util/SizeUtil.dart';
 
 import 'home.dart';
@@ -17,8 +19,8 @@ class _IndexState extends State<Index> {
 
   final List<Widget> _children = [
     Home(),
-    My(),
-    SignPage()
+    BlogLists(),
+    Login()
   ];
 
   void onTabTapped(int index) {

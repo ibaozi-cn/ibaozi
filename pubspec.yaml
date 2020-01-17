@@ -29,6 +29,8 @@ dependencies:
   url_launcher: ^5.4.1
   url_launcher_web: ^0.1.0
   wave_progress_widget: ^0.0.1
+  flutter_markdown: ^0.3.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -50,6 +52,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/
+    - images/feed/
 
 #  fonts:
 #    - family: Montserrat

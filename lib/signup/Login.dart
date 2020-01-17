@@ -80,7 +80,7 @@ class _LoginState extends State<Login> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    'Log in\nto continue.',
+                                    'Login',
                                     style: TextStyle(
 //                                        fontFamily: "Montserrat",
                                         fontWeight: FontWeight.w500,
@@ -197,17 +197,15 @@ class _LoginState extends State<Login> {
                   top: _media.height / 1.7 + _media.height / 7 + 30,
                   left: 20,
                   child: SignUpArrowButton(
-                    icon: IconData(arrow_right,
-//                        fontFamily: 'Icons'
-                    ),
-                    iconSize: 8,
+                    icon: Icons.arrow_forward,
+                    iconSize: 18,
                     onTap: () => print("Signup Tapped"),
                   )),
               Positioned(
                 top: _media.height / 1.7 + _media.height / 7 - 10,
                 left: 30,
                 child: Text(
-                  'NEXT',
+                  '下一步',
                   style: TextStyle(
 //                      fontFamily: "Montserrat",
                       fontWeight: FontWeight.w800,

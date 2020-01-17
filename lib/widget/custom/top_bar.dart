@@ -4,9 +4,9 @@
 /// Email: dndoanh@gmail.com
 ///
 import "package:flutter/material.dart";
-import 'profile_const.dart';
 import 'package:ibaozi/const/color_const.dart';
 import 'package:ibaozi/util/SizeUtil.dart';
+import 'profile_const.dart';
 
 class TopBar extends StatelessWidget {
   TopBar(
@@ -55,18 +55,18 @@ class TopBar extends StatelessWidget {
           ),
           Center(
             child: Padding(
-              padding: EdgeInsets.only(top: SizeUtil.getAxisY(20.0)),
+              padding: EdgeInsets.only(top: SizeUtil.getAxisY(30.0)),
               child: Text(
                 this.title.toUpperCase(),
                 style: TextStyle(
                     color: TEXT_BLACK,
-                    fontSize: SizeUtil.getAxisBoth(TEXT_SIZE_S),
+                    fontSize: SizeUtil.getAxisBoth(TEXT_SIZE_L),
                     fontWeight: FontWeight.w700),
               ),
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: SizeUtil.getAxisX(12.0)),
+            padding: EdgeInsets.symmetric(horizontal: SizeUtil.getAxisX(24.0)),
             alignment: AlignmentDirectional.bottomStart,
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
