@@ -2,7 +2,6 @@
 /// Created by NieBin on 2018/12/26
 /// Github: https://github.com/nb312
 /// Email: niebin312@gmail.com
-import "package:flutter/material.dart";
 
 class FeedStringConst {
   static const FEED_NAME = "IBAOZI.CN";

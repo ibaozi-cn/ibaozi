@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wave_progress_widget/wave_progress.dart';
 
+// ignore: must_be_immutable
 class PortfolioShowcase extends StatelessWidget {
   var theme;
   var textTheme;

@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:ibaozi/const/color_const.dart';
-import 'package:ibaozi/const/gradient_const.dart';
 import 'package:ibaozi/widget/xiaozhang/header/diagonally_cut_colored_image.dart';
 import 'package:ibaozi/data/friend.dart';
 import 'package:meta/meta.dart';
@@ -31,13 +30,13 @@ class DetailHeader extends StatelessWidget {
       ),
       color: RED_LIGHT,
     );
-    return Container(
-      height: 280,
-      width: screenWidth,
-      decoration: BoxDecoration(
-        gradient: SIGNUP_CARD_BACKGROUND,
-      ),
-    );
+//    return Container(
+//      height: 280,
+//      width: screenWidth,
+//      decoration: BoxDecoration(
+//        gradient: SIGNUP_CARD_BACKGROUND,
+//      ),
+//    );
   }
 
   Widget _buildAvatar() {

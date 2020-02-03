@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ibaozi/const/_const.dart';
 import 'package:ibaozi/const/color_const.dart';
 import 'package:ibaozi/const/gradient_const.dart';
-import 'package:ibaozi/const/icons.dart';
-import 'package:ibaozi/const/images_const.dart';
 import 'package:ibaozi/const/string_const.dart';
 
 import 'package:ibaozi/signup/widgets/signup_arrow_button.dart';

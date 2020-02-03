@@ -3,7 +3,7 @@ import 'package:ibaozi/blog/top_title.dart';
 import 'package:ibaozi/const/color_const.dart';
 import 'package:ibaozi/const/shadow_const.dart';
 import 'package:ibaozi/blog/feed_const.dart';
-import 'package:ibaozi/util/SizeUtil.dart';
+import 'package:ibaozi/util/size_util.dart';
 
 const cardConsts = [
   {},

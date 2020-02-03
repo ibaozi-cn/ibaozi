@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ibaozi/const/color_const.dart';
 import 'package:ibaozi/const/gradient_const.dart';
-import 'package:ibaozi/widget/Default.dart';
-import 'package:ibaozi/widget/Mage.dart';
 import 'package:ibaozi/data/friend.dart';
+import 'package:ibaozi/widget/default.dart';
+import 'package:ibaozi/widget/mage.dart';
 import 'package:ibaozi/widget/xiaozhang/xiaozhang_details_page.dart';
 
 class Home extends StatefulWidget {

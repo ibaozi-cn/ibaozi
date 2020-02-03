@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ibaozi/blog/blog_detai.dart';
 import 'package:ibaozi/blog/blog_lists.dart';
-import 'package:ibaozi/signup/Login.dart';
-import 'package:ibaozi/util/SizeUtil.dart';
+import 'package:ibaozi/home/my.dart';
+import 'package:ibaozi/signup/login.dart';
+import 'package:ibaozi/util/size_util.dart';
 
 import 'home.dart';
-import 'my.dart';
 
 class Index extends StatefulWidget {
   @override
@@ -20,7 +19,7 @@ class _IndexState extends State<Index> {
   final List<Widget> _children = [
     Home(),
     BlogLists(),
-    Login()
+    My()
   ];
 
   void onTabTapped(int index) {

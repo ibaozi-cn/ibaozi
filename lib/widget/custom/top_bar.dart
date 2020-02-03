@@ -5,7 +5,7 @@
 ///
 import "package:flutter/material.dart";
 import 'package:ibaozi/const/color_const.dart';
-import 'package:ibaozi/util/SizeUtil.dart';
+import 'package:ibaozi/util/size_util.dart';
 import 'profile_const.dart';
 
 class TopBar extends StatelessWidget {
