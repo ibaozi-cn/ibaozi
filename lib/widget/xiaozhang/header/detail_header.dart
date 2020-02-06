@@ -7,7 +7,7 @@ import 'package:ibaozi/data/friend.dart';
 import 'package:meta/meta.dart';
 
 class DetailHeader extends StatelessWidget {
-  static const BACKGROUND_IMAGE = '/profile_header_background.png';
+  static const BACKGROUND_IMAGE = '';
 
   DetailHeader(
     this.friend, {

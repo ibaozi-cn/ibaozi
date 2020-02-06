@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
       ),
       home: Launcher(),
       routes: <String, WidgetBuilder>{
-        '/launcher': (BuildContext context) => Launcher(),
         '/blogDetail': (BuildContext context) => BlogDetail(),
         '/home': (BuildContext context) => Index()
       },
