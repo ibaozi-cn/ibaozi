@@ -54,23 +54,23 @@ flutter:
     - images/
     - images/feed/
 
-#  fonts:
-#    - family: Montserrat
-#      fonts:
-#        - asset: fonts/montserrat/Montserrat-Regular.ttf
-#        - asset: fonts/montserrat/Montserrat-Medium.ttf
-#          weight: 400
-#        - asset: fonts/montserrat/Montserrat-Italic.ttf
-#          style: italic
-#        - asset: fonts/montserrat/Montserrat-Light.ttf
-#          weight: 200
-#        - asset: fonts/montserrat/Montserrat-SemiBold.ttf
-#          weight: 500
-#        - asset: fonts/montserrat/Montserrat-Bold.ttf
-#          weight: 700
-#    - family: Icons
-#      fonts:
-#        - asset: fonts/icons.ttf
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/montserrat/Montserrat-Regular.ttf
+        - asset: fonts/montserrat/Montserrat-Medium.ttf
+          weight: 400
+        - asset: fonts/montserrat/Montserrat-Italic.ttf
+          style: italic
+        - asset: fonts/montserrat/Montserrat-Light.ttf
+          weight: 200
+        - asset: fonts/montserrat/Montserrat-SemiBold.ttf
+          weight: 500
+        - asset: fonts/montserrat/Montserrat-Bold.ttf
+          weight: 700
+    - family: Icons
+      fonts:
+        - asset: fonts/icons.ttf
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

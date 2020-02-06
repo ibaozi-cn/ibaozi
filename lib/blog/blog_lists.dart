@@ -71,18 +71,12 @@ class _BlogListsState extends State<BlogLists> {
   Widget build(BuildContext context) {
     deviceWidth = MediaQuery.of(context).size.width;
     deviceHeight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: Container(
-        decoration:
-            BoxDecoration(gradient: LinearGradient(colors: [YELLOW, GREEN])),
-        child: Stack(
-          //crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            _cardClipper(),
-            TopTitleBar(),
-          ],
-        ),
-      ),
+    return Stack(
+      //crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        _cardClipper(),
+//        TopTitleBar(),
+      ],
     );
   }
 
@@ -126,41 +120,26 @@ class _BlogListsState extends State<BlogLists> {
         ),
       );
 
-  Widget _socialAction(Icon icon, String number) => Container(
-        child: Row(
-          children: <Widget>[
-            icon,
-            SizedBox(width: 7),
-            Text(
-              '$number',
-              style: TextStyle(
-                  color: Colors.black45,
-                  fontSize: SizeUtil.getAxisBoth(TEXT_SMALL_2_SIZE)),
-            )
-          ],
-        ),
-      );
-
-  Widget _socialActionRow(index) {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          _socialAction(favIcon, cardConsts[index]['like']),
-          _socialAction(chatIcon, cardConsts[index]['chat']),
-          _socialAction(shareIcon, cardConsts[index]['share'])
-        ],
-      ),
-    );
-  }
+//  Widget _socialActionRow(index) {
+//    return Container(
+//      margin: EdgeInsets.symmetric(vertical: 20),
+//      child: Row(
+//        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//        children: <Widget>[
+//          _socialAction(favIcon, cardConsts[index]['like']),
+//          _socialAction(chatIcon, cardConsts[index]['chat']),
+//          _socialAction(shareIcon, cardConsts[index]['share'])
+//        ],
+//      ),
+//    );
+//  }
 
   Widget _cardDetails(index) {
     return Column(
       children: <Widget>[
         timeText(index),
         Expanded(child: descriptionText(index)),
-        _socialActionRow(index)
+//        _socialActionRow(index)
       ],
     );
   }

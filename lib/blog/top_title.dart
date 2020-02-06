@@ -11,10 +11,12 @@ import 'feed_const.dart';
 class TopTitleBar extends StatelessWidget {
   TopTitleBar(
       {this.leftImage = FeedImage.more_circle,
-      this.rightImage = FeedImage.search_circle});
+      this.rightImage = FeedImage.search_circle,
+      this.onMenuPressed});
 
   final String leftImage;
   final String rightImage;
+  final VoidCallback onMenuPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -47,9 +49,12 @@ class TopTitleBar extends StatelessWidget {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Image.asset(leftImage,
-                      width: SizeUtil.getAxisY(CIRCLE_BUTTON_HEIGHT),
-                      height: SizeUtil.getAxisY(CIRCLE_BUTTON_HEIGHT)),
+                  InkWell(
+                    onTap: onMenuPressed,
+                    child: Image.asset(leftImage,
+                        width: SizeUtil.getAxisY(CIRCLE_BUTTON_HEIGHT),
+                        height: SizeUtil.getAxisY(CIRCLE_BUTTON_HEIGHT)),
+                  ),
                   Image.asset(rightImage,
                       width: SizeUtil.getAxisY(CIRCLE_BUTTON_HEIGHT),
                       height: SizeUtil.getAxisY(CIRCLE_BUTTON_HEIGHT))

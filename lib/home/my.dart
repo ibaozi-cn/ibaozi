@@ -4,7 +4,7 @@ import 'package:ibaozi/const/gradient_const.dart';
 class My extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _MyState('我的');
+    return _MyState('作者');
   }
 }
 

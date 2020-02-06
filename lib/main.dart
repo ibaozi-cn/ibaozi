@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ibaozi/blog/blog_detai.dart';
 import 'package:ibaozi/home/index.dart';
 
+import 'launcher/splash_screen.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -22,9 +24,11 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: Index(),
+      home: Launcher(),
       routes: <String, WidgetBuilder>{
-        '/blogDetail': (BuildContext context) => BlogDetail()
+        '/launcher': (BuildContext context) => Launcher(),
+        '/blogDetail': (BuildContext context) => BlogDetail(),
+        '/home': (BuildContext context) => Index()
       },
     );
   }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ibaozi/blog/blog_lists.dart';
 import 'package:ibaozi/home/my.dart';
-import 'package:ibaozi/signup/login.dart';
 import 'package:ibaozi/util/size_util.dart';
+import 'package:ibaozi/navigation/coordinator.dart';
 
 import 'home.dart';
 
@@ -18,7 +17,7 @@ class _IndexState extends State<Index> {
 
   final List<Widget> _children = [
     Home(),
-    BlogLists(),
+    NavigationOneCoordinator(),
     My()
   ];
 
@@ -39,7 +38,7 @@ class _IndexState extends State<Index> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.apps), title: Text('博主')),
           BottomNavigationBarItem(icon: Icon(Icons.add_box), title: Text('博客')),
-          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('我的')),
+          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text('作者')),
         ],
       ),
     );
