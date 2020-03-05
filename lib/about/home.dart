@@ -7,6 +7,7 @@ import 'package:ibaozi/about/responsive_widget.dart';
 import 'package:ibaozi/about/screen_utils.dart';
 import 'package:ibaozi/about/strings.dart';
 import 'package:ibaozi/about/text_styles.dart';
+import 'package:ibaozi/blog/blog_tab.dart';
 import 'package:ibaozi/blogger/home_blogger.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -48,7 +49,7 @@ class HomePageState extends State<HomePage> {
       case 1:
         return HomeBlogger();
       case 2:
-        return HomeBlogger();
+        return BlogTab();
     }
   }
 
@@ -99,7 +100,7 @@ class HomePageState extends State<HomePage> {
         ),
         onPressed: () {
           setState(() {
-            _selectedDrawerIndex = 1;
+            _selectedDrawerIndex = 2;
           });
         },
       ),
@@ -324,13 +325,16 @@ class HomePageState extends State<HomePage> {
     'Dart',
     'Flutter',
     'Android',
-    'Python',
-    'Docker',
     'React',
     'Jenkins',
     'React Native',
     '小程序',
     'Scrum Master',
+    'Js',
+    'NodeJs',
+    'Docker',
+    'Python',
+    'JVM',
   ];
 
   Widget _buildSkills(BuildContext context) {
