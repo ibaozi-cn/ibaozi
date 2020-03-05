@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BlogWidget extends StatelessWidget {
   final blog;
@@ -11,7 +12,9 @@ class BlogWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     double topBottomPadding = (index == 0 || index == length - 1) ? 16.0 : 8.0;
     return InkWell(
-      onTap: () => {},
+      onTap: () => {
+        launch(blog.mediumUrl)
+      },
       child: Card(
         margin:
             EdgeInsets.fromLTRB(16.0, topBottomPadding, 16.0, topBottomPadding),

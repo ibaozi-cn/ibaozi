@@ -100,16 +100,18 @@ class _BlogTabState extends State<BlogTab> {
         Blog(
           title: "Flutter环境搭建",
           content: Content(
-            subtitle: "Flutter环境",
+            subtitle: "Flutter 1.0 正式版发布，Flutter 是 Google 用以帮助开发者在 iOS 和 Android 两个平台开发高质量原生 UI 的移动 SDK。官方还创建了Flutter中文社区，从未见过如此用心，相信在不久的将来，一定有它的用武之地，来跟我一起研究，一起探讨，走起。",
           ),
-          importedUrl: "images/01.jpg"
+          importedUrl: "images/01.jpg",
+          mediumUrl: "https://www.jianshu.com/p/ab2bbcdc54d0"
         ),
         Blog(
-            title: "Flutter第一章",
+            title: "为什么学习以及如何学习Flutter",
             content: Content(
-                subtitle: "Flutter第一章内容"
+                subtitle: "在这篇文章中，我将谈谈为什么开始学习Flutter和Dart语言。我是如何做到这一点的，以及我保持专注的策略是什么。希望能帮助您开始使用Google的移动开发框架并继续您的旅程。"
             ),
-            importedUrl: "images/02.jpg"
+            importedUrl: "images/02.jpg",
+            mediumUrl: "https://www.jianshu.com/p/0514ab661c96"
         )];
       _showError = false;
       _loadingData = false;
