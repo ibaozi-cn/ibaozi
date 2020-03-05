@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ibaozi/about/home.dart';
+import 'package:ibaozi/about/screen_utils.dart';
 import 'package:ibaozi/blog/blog_detai.dart';
 import 'package:ibaozi/home/index.dart';
 
+import 'home/home_blogger.dart';
 import 'launcher/splash_screen.dart';
 
 void main() => runApp(MyApp());
@@ -27,7 +30,8 @@ class MyApp extends StatelessWidget {
       home: Launcher(),
       routes: <String, WidgetBuilder>{
         '/blogDetail': (BuildContext context) => BlogDetail(),
-        '/home': (BuildContext context) => Index()
+        '/homeBlogger': (BuildContext context) => HomeBlogger(),
+        '/homePage': (BuildContext context) => HomePage(),
       },
     );
   }

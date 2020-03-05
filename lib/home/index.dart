@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ibaozi/blog/blog_home.dart';
 import 'package:ibaozi/home/my.dart';
 import 'package:ibaozi/util/size_util.dart';
-import 'package:ibaozi/navigation/coordinator.dart';
 
-import 'home.dart';
+import 'home_blogger.dart';
+
 
 class Index extends StatefulWidget {
   @override
@@ -16,8 +17,8 @@ class _IndexState extends State<Index> {
   int _currentIndex = 0;
 
   final List<Widget> _children = [
-    Home(),
-    NavigationOneCoordinator(),
+    HomeBlogger(),
+    BlogHome(),
     My()
   ];
 

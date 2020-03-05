@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:ibaozi/const/gradient_const.dart';
 import 'package:ibaozi/const/string_const.dart';
-import 'package:ibaozi/widget/custom/top_bar.dart';
+import 'package:ibaozi/blogger/custom/top_bar.dart';
 
 
 class BlogDetail extends StatefulWidget {
