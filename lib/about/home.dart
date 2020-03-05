@@ -22,12 +22,14 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
     return Material(
-      color: Colors.white70,
       child: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: (ScreenUtil.getInstance().setWidth(108))), //144
+            horizontal:!ResponsiveWidget.isSmallScreen(context)
+                ? (ScreenUtil.getInstance().setWidth(108))
+                : (ScreenUtil.getInstance().setWidth(6))
+        ), //144
         child: Scaffold(
-          backgroundColor: Colors.transparent,
+//          backgroundColor: Colors.transparent,
           appBar: _buildAppBar(context),
           drawer: _buildDrawer(context),
           body: _getDrawerItemWidget(_selectedDrawerIndex),
@@ -141,6 +143,7 @@ class HomePageState extends State<HomePage> {
   //Screen Methods:-------------------------------------------------------------
   Widget _buildBody(BuildContext context, BoxConstraints constraints) {
     return SingleChildScrollView(
+      padding: EdgeInsets.all(16),
       child: ConstrainedBox(
         constraints: BoxConstraints(
             minWidth: constraints.maxWidth, minHeight: constraints.maxHeight),
