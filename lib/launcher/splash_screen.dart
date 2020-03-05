@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ibaozi/about/screen_utils.dart';
 import 'package:ibaozi/const/gradient_const.dart';
 import 'package:ibaozi/util/size_util.dart';
 import 'package:ibaozi/view/delay_animate.dart';
 import 'package:ibaozi/blogger/custom/profile_const.dart';
-import 'package:ibaozi/blogger/custom/top_bar.dart';
 
 class Launcher extends StatefulWidget {
   @override
@@ -66,9 +64,9 @@ class _LauncherState extends State<Launcher> {
         body: Container(
             height: double.infinity,
             width: double.infinity,
-//            decoration: BoxDecoration(
-//              gradient: SIGNUP_BACKGROUND,
-//            ),
+            decoration: BoxDecoration(
+              gradient: SIGNUP_BACKGROUND,
+            ),
             child: Column(
               children: <Widget>[
                 DelayedAnimation(
@@ -95,7 +93,7 @@ class _LauncherState extends State<Launcher> {
                       style: TextStyle(
                           fontWeight: FontWeight.w100,
                           fontSize: 15.0,
-                          color: Colors.cyan,
+                          color: Colors.white,
                           fontFamily: "Icons")),
                   delay: delayedAmount + 1000,
                 ),
@@ -104,7 +102,7 @@ class _LauncherState extends State<Launcher> {
                       style: TextStyle(
                           fontWeight: FontWeight.w200,
                           fontSize: 18.0,
-                          color: Colors.deepOrange,
+                          color: Colors.white,
                           fontStyle: FontStyle.italic)),
                   delay: delayedAmount + 2000,
                 ),
@@ -113,7 +111,7 @@ class _LauncherState extends State<Launcher> {
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 20.0,
-                          color: Colors.cyan,
+                          color: Colors.white,
                           fontStyle: FontStyle.normal)),
                   delay: delayedAmount + 3000,
                 ),
@@ -122,7 +120,7 @@ class _LauncherState extends State<Launcher> {
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 22.0,
-                          color: Colors.deepOrange,
+                          color: Colors.white,
                           fontStyle: FontStyle.normal)),
                   delay: delayedAmount + 4000,
                 ),
@@ -131,7 +129,7 @@ class _LauncherState extends State<Launcher> {
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 24.0,
-                          color: Colors.cyan,
+                          color: Colors.white,
                           fontStyle: FontStyle.normal)),
                   delay: delayedAmount + 5000,
                 ),
@@ -140,7 +138,7 @@ class _LauncherState extends State<Launcher> {
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 26.0,
-                          color: Colors.deepOrange,
+                          color: Colors.white,
                           fontStyle: FontStyle.normal)),
                   delay: delayedAmount + 6000,
                 ),
@@ -149,7 +147,7 @@ class _LauncherState extends State<Launcher> {
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 24.0,
-                          color: Colors.cyan,
+                          color: Colors.white,
                           fontStyle: FontStyle.normal)),
                   delay: delayedAmount + 7000,
                 ),
@@ -158,16 +156,16 @@ class _LauncherState extends State<Launcher> {
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 22.0,
-                          color: Colors.deepOrange,
+                          color: Colors.white,
                           fontStyle: FontStyle.normal)),
                   delay: delayedAmount + 8000,
                 ),
                 DelayedAnimation(
-                  child: Text("Come on",
+                  child: Text("一起加油哦。",
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 20.0,
-                          color: Colors.cyan,
+                          color: Colors.white,
                           fontStyle: FontStyle.normal)),
                   delay: delayedAmount + 9000,
                 ),

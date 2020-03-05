@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ibaozi/about/home.dart';
-import 'package:ibaozi/about/screen_utils.dart';
 import 'package:ibaozi/blog/blog_detai.dart';
-import 'package:ibaozi/home/index.dart';
 
-import 'home/home_blogger.dart';
+import 'blogger/home_blogger.dart';
 import 'launcher/splash_screen.dart';
 
 void main() => runApp(MyApp());

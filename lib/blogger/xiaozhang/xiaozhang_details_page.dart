@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ibaozi/const/gradient_const.dart';
-import 'package:ibaozi/blogger/xiaozhang/footer/detail_footer.dart';
 import 'package:ibaozi/blogger/xiaozhang/xiaozhang_detail_body.dart';
 import 'package:ibaozi/blogger/xiaozhang/header/detail_header.dart';
 import 'package:meta/meta.dart';
@@ -9,8 +7,6 @@ import '../../data/friend.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'footer/articles_showcase.dart';
-import 'footer/portfolio_showcase.dart';
-import 'footer/skills_showcase.dart';
 
 class XiaoZhangDetailsPage extends StatefulWidget {
   XiaoZhangDetailsPage(

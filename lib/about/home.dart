@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:ibaozi/about/assets.dart';
 import 'package:ibaozi/about/education.dart';
 import 'package:ibaozi/about/fonts.dart';
@@ -6,7 +7,8 @@ import 'package:ibaozi/about/responsive_widget.dart';
 import 'package:ibaozi/about/screen_utils.dart';
 import 'package:ibaozi/about/strings.dart';
 import 'package:ibaozi/about/text_styles.dart';
-import 'package:ibaozi/home/home_blogger.dart';
+import 'package:ibaozi/blogger/home_blogger.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,7 +18,7 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  int _selectedDrawerIndex = 0;
+  int _selectedDrawerIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +26,9 @@ class HomePageState extends State<HomePage> {
     return Material(
       child: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal:!ResponsiveWidget.isSmallScreen(context)
+            horizontal: !ResponsiveWidget.isSmallScreen(context)
                 ? (ScreenUtil.getInstance().setWidth(108))
-                : (ScreenUtil.getInstance().setWidth(6))
-        ), //144
+                : (ScreenUtil.getInstance().setWidth(6))), //144
         child: Scaffold(
 //          backgroundColor: Colors.transparent,
           appBar: _buildAppBar(context),
@@ -56,7 +57,7 @@ class HomePageState extends State<HomePage> {
     return AppBar(
       titleSpacing: 0.0,
       title: _buildTitle(),
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.amber,
       elevation: 0.0,
       actions: !ResponsiveWidget.isSmallScreen(context)
           ? _buildActions(context)
@@ -207,7 +208,7 @@ class HomePageState extends State<HomePage> {
           _buildCopyRightText(context),
           SizedBox(
               height: ResponsiveWidget.isSmallScreen(context) ? 12.0 : 0.0),
-          _buildSocialIcons(),
+          _buildSocialIcons(context),
           SizedBox(
               height: ResponsiveWidget.isSmallScreen(context) ? 12.0 : 0.0),
         ],
@@ -412,7 +413,7 @@ class HomePageState extends State<HomePage> {
 
   Widget _buildEducationSummary() {
     return Text(
-      '编程是一门艺术，以不变应万变。',
+      '编程是一门艺术，万变不离其宗，以不变应万变。',
       style: TextStyles.body,
     );
   }
@@ -465,7 +466,7 @@ class HomePageState extends State<HomePage> {
                 alignment: Alignment.centerLeft,
               ),
               Align(
-                child: _buildSocialIcons(),
+                child: _buildSocialIcons(context),
                 alignment: Alignment.centerRight,
               ),
             ],
@@ -484,18 +485,39 @@ class HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buildSocialIcons() {
+  Widget _buildSocialIcons(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         GestureDetector(
           onTap: () {
-//            html.window
-//                .open("https://www.linkedin.com/in/zubairehman/", "LinkedIn");
+            showDialog(
+                context: context,
+                child: AlertDialog(
+                  title: Text("微信号",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold)),
+                  content: Text("ai_xiaoduo_com",
+                      style: TextStyle(
+                          color: Colors.cyan,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.normal)),
+                  actions: <Widget>[
+                    FlatButton(
+                        onPressed: () {
+                          Clipboard.setData(
+                              ClipboardData(text: 'ai_xiaoduo_com'));
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('复制')),
+                  ],
+                ));
           },
           child: Image.asset(
-            Assets.linkedin,
+            Assets.weixin,
             color: Color(0xFF45405B),
             height: 20.0,
             width: 20.0,
@@ -504,10 +526,31 @@ class HomePageState extends State<HomePage> {
         SizedBox(width: 16.0),
         GestureDetector(
           onTap: () {
-//            html.window.open("https://medium.com/@zubairehman.work", "Medium");
+            showDialog(
+                context: context,
+                child: AlertDialog(
+                  title: Text("QQ",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold)),
+                  content: Text("1608889789",
+                      style: TextStyle(
+                          color: Colors.cyan,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.normal)),
+                  actions: <Widget>[
+                    FlatButton(
+                        onPressed: () {
+                          Clipboard.setData(ClipboardData(text: '1608889789'));
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('复制')),
+                  ],
+                ));
           },
           child: Image.asset(
-            Assets.evernote,
+            Assets.qq,
             color: Color(0xFF45405B),
             height: 20.0,
             width: 20.0,
@@ -516,10 +559,10 @@ class HomePageState extends State<HomePage> {
         SizedBox(width: 16.0),
         GestureDetector(
           onTap: () {
-//            html.window.open("https://github.com/zubairehman", "Github");
+            launch("https://www.jianshu.com/u/77699cd41b28");
           },
           child: Image.asset(
-            Assets.google,
+            Assets.jianshu,
             color: Color(0xFF45405B),
             height: 20.0,
             width: 20.0,
@@ -528,10 +571,10 @@ class HomePageState extends State<HomePage> {
         SizedBox(width: 16.0),
         GestureDetector(
           onTap: () {
-//            html.window.open("https://twitter.com/zubair340", "Twitter");
+            launch("mailto:zzy0523@gmail.com");
           },
           child: Image.asset(
-            Assets.twitter,
+            Assets.gmail,
             color: Color(0xFF45405B),
             height: 20.0,
             width: 20.0,

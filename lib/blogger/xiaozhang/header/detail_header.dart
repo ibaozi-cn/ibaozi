@@ -28,7 +28,7 @@ class DetailHeader extends StatelessWidget {
         height: 230.0,
         fit: BoxFit.cover,
       ),
-      color: RED_LIGHT,
+      color: MAIN_COLOR,
     );
 //    return Container(
 //      height: 280,

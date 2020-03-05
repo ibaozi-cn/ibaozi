@@ -8,10 +8,8 @@
 class StringConst {
   //strings
   static const String APP_NAME = "ibaozi";
-  static const String CREATE_BY = "Created By Volunteer";
   static const String DEVELOPER = "Volunteer";
   static const String PROFESSION = "Flutter Developer";
-  static const String DEV_EMAIL = "niebin312@gmail.com";
   static const String SIGN_UP = "注册";
   static const String SIGN_UP_TEXT = "没有账号?";
 

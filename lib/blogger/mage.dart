@@ -2,9 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:ibaozi/const/color_const.dart';
-import 'package:ibaozi/const/gradient_const.dart';
 import 'package:ibaozi/util/size_util.dart';
-import 'package:ibaozi/blogger/custom/top_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'custom/profile_const.dart';
 

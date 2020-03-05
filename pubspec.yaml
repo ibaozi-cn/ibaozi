@@ -52,7 +52,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/
-    - images/feed/
 
   fonts:
     - family: Montserrat

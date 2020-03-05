@@ -4,9 +4,8 @@ class Assets {
   static const String programmer3 = 'images/programer.gif';
 
   // social icons
-  static const String dribble = 'images/ic_dribbble.png';
-  static const String evernote = 'images/ic_evernote.png';
-  static const String google = 'images/ic_google.png';
-  static const String twitter = 'images/ic_twitter.png';
-  static const String linkedin = 'images/ic_linkedIn.png';
+  static const String qq = 'images/qq.png';
+  static const String jianshu = 'images/jianshu.png';
+  static const String gmail = 'images/gmail.png';
+  static const String weixin = 'images/weixin.png';
 }

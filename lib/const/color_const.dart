@@ -5,21 +5,21 @@
 ///
 import "package:flutter/material.dart";
 
-const MAIN_COLOR = Color(0xFF303030);
-const DARK_COLOR = Color(0xFFBDBDBD);
+const MAIN_COLOR = Colors.amber;
+const DARK_COLOR = Colors.amberAccent;
 const BOTTOM_COLORS = [MAIN_COLOR, DARK_COLOR];
-const YELLOW = Color(0xfffbed96);
-const BLUE = Color(0xffabecd6);
-const BLUE_DEEP = Color(0xffA8CBFD);
-const BLUE_LIGHT = Color(0xffAED3EA);
-const PURPLE = Color(0xffccc3fc);
-const SIGNUP_LIGHT_RED = Color(0xffffc2a1);
-const SIGNUP_RED = Color(0xffffb1bb);
-const RED = Color(0xffF2A7B3);
-const GREEN = Color(0xffc7e5b4);
-const RED_LIGHT = Color(0xffFFC3A0);
-const TEXT_BLACK = Color(0xFF353535);
-const TEXT_BLACK_LIGHT = Color(0xFF34323D);
+const YELLOW = Colors.yellow;
+const BLUE = Colors.cyan;
+const BLUE_DEEP = Colors.blue;
+const BLUE_LIGHT = Colors.blueAccent;
+const PURPLE = Colors.lime;
+const SIGNUP_LIGHT_RED = Colors.deepOrangeAccent;
+const SIGNUP_RED = Colors.redAccent;
+const RED = Colors.red;
+const GREEN = Colors.green;
+const RED_LIGHT = Colors.deepOrangeAccent;
+const TEXT_BLACK = Colors.black87;
+const TEXT_BLACK_LIGHT = Colors.black26;
 const TRANSPARENT = Colors.transparent;
 
 const tagsColors = [
