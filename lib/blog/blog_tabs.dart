@@ -131,6 +131,7 @@ class _BlogTabsState extends State<BlogTabs> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(top: 8,left: 8,right: 8),
       color: Color(0xFFf1f3f4),
       child: Column(
         children: <Widget>[
