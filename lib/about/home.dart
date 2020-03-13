@@ -7,7 +7,6 @@ import 'package:ibaozi/about/responsive_widget.dart';
 import 'package:ibaozi/about/screen_utils.dart';
 import 'package:ibaozi/about/strings.dart';
 import 'package:ibaozi/about/text_styles.dart';
-import 'package:ibaozi/blog/blog_tab_item.dart';
 import 'package:ibaozi/blog/blog_tabs.dart';
 import 'package:ibaozi/blogger/home_blogger.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -409,7 +408,7 @@ class HomePageState extends State<HomePage> {
       '10 2018',
       '-至今',
       '居理新房',
-      'Android system engineer',
+      'Android System Engineer',
     ),
     Education(
       '9 2017',
@@ -446,7 +445,7 @@ class HomePageState extends State<HomePage> {
 
   Widget _buildEducationSummary() {
     return Text(
-      '编程是一门艺术，万变不离其宗，以不变应万变。',
+      '性能的关键是精简，而不是一堆的优化用例。除非有真正显著的效果，否则一定要忍住你那些蠢蠢欲动的小微调的企图。',
       style: TextStyles.body,
     );
   }

@@ -95,7 +95,7 @@ class _LauncherState extends State<Launcher> {
                           fontSize: 15.0,
                           color: Colors.white,
                           fontFamily: "Icons")),
-                  delay: delayedAmount + 1000,
+                  delay: delayedAmount,
                 ),
                 DelayedAnimation(
                   child: Text("我是i校长",
@@ -104,7 +104,7 @@ class _LauncherState extends State<Launcher> {
                           fontSize: 18.0,
                           color: Colors.white,
                           fontStyle: FontStyle.italic)),
-                  delay: delayedAmount + 2000,
+                  delay: delayedAmount + 1000,
                 ),
                 DelayedAnimation(
                   child: Text("至今从事Android开发6年",
@@ -113,7 +113,7 @@ class _LauncherState extends State<Launcher> {
                           fontSize: 20.0,
                           color: Colors.white,
                           fontStyle: FontStyle.normal)),
-                  delay: delayedAmount + 3000,
+                  delay: delayedAmount + 1000,
                 ),
                 DelayedAnimation(
                   child: Text("目前就职于居理新房",
@@ -122,7 +122,7 @@ class _LauncherState extends State<Launcher> {
                           fontSize: 22.0,
                           color: Colors.white,
                           fontStyle: FontStyle.normal)),
-                  delay: delayedAmount + 4000,
+                  delay: delayedAmount + 2000,
                 ),
                 DelayedAnimation(
                   child: Text("为满足人类的一切居住理想而努力",
@@ -131,7 +131,7 @@ class _LauncherState extends State<Launcher> {
                           fontSize: 24.0,
                           color: Colors.white,
                           fontStyle: FontStyle.normal)),
-                  delay: delayedAmount + 5000,
+                  delay: delayedAmount + 2000,
                 ),
                 DelayedAnimation(
                   child: Text("我很幸运，也很自豪",
@@ -140,34 +140,34 @@ class _LauncherState extends State<Launcher> {
                           fontSize: 26.0,
                           color: Colors.white,
                           fontStyle: FontStyle.normal)),
-                  delay: delayedAmount + 6000,
+                  delay: delayedAmount + 3000,
                 ),
                 DelayedAnimation(
-                  child: Text("建立这个网站的初心就是学习Flutter",
+                  child: Text("当然建立这个网站的初心",
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 24.0,
                           color: Colors.white,
                           fontStyle: FontStyle.normal)),
-                  delay: delayedAmount + 7000,
+                  delay: delayedAmount + 3000,
                 ),
                 DelayedAnimation(
-                  child: Text("来吧你也可以跟我一样，一起学习",
+                  child: Text("就是想让每个人的简历有个落脚点",
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 22.0,
                           color: Colors.white,
                           fontStyle: FontStyle.normal)),
-                  delay: delayedAmount + 8000,
+                  delay: delayedAmount + 4000,
                 ),
                 DelayedAnimation(
-                  child: Text("一起加油哦。",
+                  child: Text("欢迎投递简历入住哦",
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 20.0,
                           color: Colors.white,
                           fontStyle: FontStyle.normal)),
-                  delay: delayedAmount + 9000,
+                  delay: delayedAmount + 4000,
                 ),
                 DelayedAnimation(
                   child: Container(
@@ -177,7 +177,7 @@ class _LauncherState extends State<Launcher> {
                     ),
                     child: _itemFlow(),
                   ),
-                  delay: delayedAmount + 9000,
+                  delay: delayedAmount + 5000,
                 ),
               ],
             )));

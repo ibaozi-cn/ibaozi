@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ibaozi/about/home.dart';
 import 'package:ibaozi/blog/blog_detai.dart';
+import 'package:ibaozi/blogger/xiaozhang/xiaozhang_details_page.dart';
+import 'package:ibaozi/data/friend.dart';
 
 import 'blogger/home_blogger.dart';
+import 'blogger/mage.dart';
 import 'launcher/splash_screen.dart';
 
 void main() => runApp(MyApp());
@@ -30,6 +33,13 @@ class MyApp extends StatelessWidget {
         '/blogDetail': (BuildContext context) => BlogDetail(),
         '/homeBlogger': (BuildContext context) => HomeBlogger(),
         '/homePage': (BuildContext context) => HomePage(),
+        '/marco': (BuildContext context) => Mage(),
+        '/xiaozhang': (BuildContext context) => XiaoZhangDetailsPage(Friend(
+            avatar: "images/avatar_xiaozhang.jpg",
+            name: "i校长",
+            location: "北京",
+            email: "zzy0523@gmail.com"),
+            avatarTag: 0),
       },
     );
   }
