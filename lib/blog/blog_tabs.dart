@@ -43,14 +43,14 @@ class _BlogTabsState extends State<BlogTabs> {
                 "\n* 当主App不存在时，其他App使用自带录音服务" +
                 "\n* 有优先级，优先级高的App有绝对的录音权限，不管其他App是否在录音都要暂停，优先处理高优先级的App请求" +
                 "\n* 支持AudioRecord、MediaRecorder两种录音方案"),
-        importedUrl: "images/android-audio-ac.png",
+        importedUrl: "images/android_audio_ac.png",
         mediumUrl: "https://www.jianshu.com/p/662f1b042529"),
     Blog(
         title: "看Android的发展历程-谈一下当下最合适的架构",
         content: Content(
             subtitle:
                 "上次我们讲到一个好的架构有哪些优点，当然好的架构肯定还有其他方面的优势，我只是表达了自己的一些观点，有问题欢迎反驳，我们一起讨论。下面我们来看看当前版本的Android架构，如何做到最合适，也不一定是最合适，但大方向肯定要正确。我们先看看架构的历程。"),
-        importedUrl: "images/android-ac.png",
+        importedUrl: "images/android_ac.png",
         mediumUrl: "https://www.jianshu.com/p/d90dbed80a38")
   ];
 
