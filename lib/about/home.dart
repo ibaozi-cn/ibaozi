@@ -106,6 +106,7 @@ class HomePageState extends State<HomePage> {
           setState(() {
             _selectedDrawerIndex = 2;
           });
+          if (ResponsiveWidget.isSmallScreen(context)) Navigator.pop(context);
         },
       ),
       MaterialButton(
@@ -117,6 +118,8 @@ class HomePageState extends State<HomePage> {
           setState(() {
             _selectedDrawerIndex = 4;
           });
+          if (ResponsiveWidget.isSmallScreen(context)) Navigator.pop(context);
+
         },
       ),
       MaterialButton(
@@ -128,6 +131,8 @@ class HomePageState extends State<HomePage> {
           setState(() {
             _selectedDrawerIndex = 3;
           });
+          if (ResponsiveWidget.isSmallScreen(context)) Navigator.pop(context);
+
         },
       ),
       MaterialButton(
@@ -139,6 +144,8 @@ class HomePageState extends State<HomePage> {
           setState(() {
             _selectedDrawerIndex = 1;
           });
+          if (ResponsiveWidget.isSmallScreen(context)) Navigator.pop(context);
+
         },
       ),
       MaterialButton(
@@ -152,6 +159,8 @@ class HomePageState extends State<HomePage> {
           setState(() {
             _selectedDrawerIndex = 0;
           });
+          if (ResponsiveWidget.isSmallScreen(context)) Navigator.pop(context);
+
         },
       ),
     ];
