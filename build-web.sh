@@ -6,5 +6,5 @@
 #rm build/web.zip
 
 git add .
-git commit -m "【build web】"
+git commit -m "【update web style】"
 git push origin dev

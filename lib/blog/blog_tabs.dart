@@ -110,11 +110,11 @@ class _BlogTabsState extends State<BlogTabs> {
               _blogListData = _getBlogList(index);
             });
           },
-          color: isSelected ? Colors.amber : Colors.white,
+          color: isSelected ? Color(0xFFffa41b) : Colors.white,
           child: Text(
             _selectDataList[index],
             style: TextStyles.menu_item
-                .copyWith(color: isSelected ? Colors.white : Color(0xFF50AFC0)),
+                .copyWith(color: isSelected ? Colors.white : Colors.black),
           ),
         ),
         SizedBox(width: 5)
@@ -131,6 +131,7 @@ class _BlogTabsState extends State<BlogTabs> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Color(0xFFf1f3f4),
       child: Column(
         children: <Widget>[
           Container(

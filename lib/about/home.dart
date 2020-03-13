@@ -62,7 +62,7 @@ class HomePageState extends State<HomePage> {
     return AppBar(
       titleSpacing: 0.0,
       title: _buildTitle(),
-      backgroundColor: Colors.amber,
+      backgroundColor: Color(0xFFf1f3f4),
       elevation: 0.0,
       actions: !ResponsiveWidget.isSmallScreen(context)
           ? _buildActions(context)
