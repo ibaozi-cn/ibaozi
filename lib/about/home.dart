@@ -7,7 +7,8 @@ import 'package:ibaozi/about/responsive_widget.dart';
 import 'package:ibaozi/about/screen_utils.dart';
 import 'package:ibaozi/about/strings.dart';
 import 'package:ibaozi/about/text_styles.dart';
-import 'package:ibaozi/blog/blog_tab.dart';
+import 'package:ibaozi/blog/blog_tab_item.dart';
+import 'package:ibaozi/blog/blog_tabs.dart';
 import 'package:ibaozi/blogger/home_blogger.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -49,7 +50,11 @@ class HomePageState extends State<HomePage> {
       case 1:
         return HomeBlogger();
       case 2:
-        return BlogTab();
+        return BlogTabs();
+      case 3:
+        return BlogTabs();
+      case 4:
+        return BlogTabs();
     }
   }
 
@@ -101,6 +106,28 @@ class HomePageState extends State<HomePage> {
         onPressed: () {
           setState(() {
             _selectedDrawerIndex = 2;
+          });
+        },
+      ),
+      MaterialButton(
+        child: Text(
+          Strings.menu_contribute,
+          style: TextStyles.menu_item,
+        ),
+        onPressed: () {
+          setState(() {
+            _selectedDrawerIndex = 4;
+          });
+        },
+      ),
+      MaterialButton(
+        child: Text(
+          Strings.menu_message,
+          style: TextStyles.menu_item,
+        ),
+        onPressed: () {
+          setState(() {
+            _selectedDrawerIndex = 3;
           });
         },
       ),
@@ -335,6 +362,8 @@ class HomePageState extends State<HomePage> {
     'Docker',
     'Python',
     'JVM',
+    'Git',
+    'JIRA',
   ];
 
   Widget _buildSkills(BuildContext context) {

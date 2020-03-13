@@ -14,6 +14,8 @@ class Strings {
 
   // menu items
   static const String menu_home = '主页';
+  static const String menu_contribute = '投稿';
+  static const String menu_message = '留言';
   static const String menu_about = '作者';
   static const String menu_contact = '博主';
 
