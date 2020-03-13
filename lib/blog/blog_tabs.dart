@@ -110,11 +110,11 @@ class _BlogTabsState extends State<BlogTabs> {
               _blogListData = _getBlogList(index);
             });
           },
-          color: isSelected ? Colors.white : Colors.black87,
+          color: isSelected ? Colors.amber : Colors.white,
           child: Text(
             _selectDataList[index],
             style: TextStyles.menu_item
-                .copyWith(color: isSelected ? Colors.black : Colors.white),
+                .copyWith(color: isSelected ? Colors.white : Color(0xFF50AFC0)),
           ),
         ),
         SizedBox(width: 5)
