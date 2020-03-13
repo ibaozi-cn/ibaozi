@@ -2,6 +2,8 @@
 
 flutter build web
 
+rm build/web web.zip
+
 zip build/web web.zip
 
 cp build/web.zip web.zip
