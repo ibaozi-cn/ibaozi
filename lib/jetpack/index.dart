@@ -192,6 +192,7 @@ class JetPackPageState extends State<JetPackPage> {
     return Container(
       child: ListView.builder(
         shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
         itemCount: dataList.length,
         scrollDirection: Axis.vertical,
         itemBuilder: (BuildContext context, int index) {
@@ -243,7 +244,7 @@ class JetPackPageState extends State<JetPackPage> {
 
   _buildSwitchSmall(title, lights, onChange) {
     return Container(
-      width: 150,
+      width: 180,
       child: SwitchListTile(
           activeColor: Color(0xFF50AFC0),
           title: Text(
@@ -403,7 +404,7 @@ class JetPackPageState extends State<JetPackPage> {
     var _size = 25.0;
     var _sizeHeight = 25.0;
     return Container(
-        margin: EdgeInsets.only(left: 16, top: 16,right: 16),
+        margin: EdgeInsets.only(left: 16, top: 16, right: 16),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -436,8 +437,8 @@ class JetPackPageState extends State<JetPackPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
-                _buildSwitch("Java", true, (state) {}),
-                _buildSwitch("Kotlin", _lightsKotlin, (state) {
+                _buildSwitchSmall("Java", true, (state) {}),
+                _buildSwitchSmall("Kotlin", _lightsKotlin, (state) {
                   setState(() {
                     _lightsKotlin = state;
                   });
@@ -482,8 +483,8 @@ class JetPackPageState extends State<JetPackPage> {
             _lightsBasic
                 ? _buildHorizontalListView(_dependenciesBasicListData)
                 : SizedBox(
-              height: 1,
-            ),
+                    height: 1,
+                  ),
             _buildSwitchForDependence("架构", _lightsArc, (state) {
               setState(() {
                 _lightsArc = state;
@@ -492,8 +493,8 @@ class JetPackPageState extends State<JetPackPage> {
             _lightsArc
                 ? _buildHorizontalListView(_dependenciesArcListData)
                 : SizedBox(
-              height: 1,
-            ),
+                    height: 1,
+                  ),
             _buildSwitchForDependence("行为", _lightsBehavior, (state) {
               setState(() {
                 _lightsBehavior = state;
@@ -502,8 +503,8 @@ class JetPackPageState extends State<JetPackPage> {
             _lightsBehavior
                 ? _buildHorizontalListView(_dependenciesListBehaviorData)
                 : SizedBox(
-              height: 1,
-            ),
+                    height: 1,
+                  ),
             _buildSwitchForDependence("界面", _lightsUi, (state) {
               setState(() {
                 _lightsUi = state;
@@ -512,8 +513,8 @@ class JetPackPageState extends State<JetPackPage> {
             _lightsUi
                 ? _buildHorizontalListView(_dependenciesUIListData)
                 : SizedBox(
-              height: 1,
-            ),
+                    height: 1,
+                  ),
           ],
         ));
   }
