@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:ibaozi/about/home.dart';
 import 'package:ibaozi/blog/blog_detai.dart';
 import 'package:ibaozi/blogger/xiaozhang/xiaozhang_details_page.dart';
 import 'package:ibaozi/data/friend.dart';
+import 'package:ibaozi/jetpack/index.dart';
 
 import 'blogger/home_blogger.dart';
 import 'blogger/mage.dart';
-import 'launcher/splash_screen.dart';
+import 'home/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,12 +28,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: Launcher(),
+      home: HomePage(),
       routes: <String, WidgetBuilder>{
         '/blogDetail': (BuildContext context) => BlogDetail(),
         '/homeBlogger': (BuildContext context) => HomeBlogger(),
         '/homePage': (BuildContext context) => HomePage(),
         '/marco': (BuildContext context) => Mage(),
+        '/jetpack': (BuildContext context) => JetPackPage(),
         '/xiaozhang': (BuildContext context) => XiaoZhangDetailsPage(Friend(
             avatar: "images/avatar_xiaozhang.jpg",
             name: "i校长",

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ibaozi/about/text_styles.dart';
+import 'package:ibaozi/home/text_styles.dart';
 import 'package:ibaozi/blog/blog_tab_item.dart';
 import 'package:ibaozi/data/blog_model.dart';
 
@@ -11,16 +11,15 @@ class BlogTabs extends StatefulWidget {
 }
 
 class _BlogTabsState extends State<BlogTabs> {
-  var _selectIndex = 0;
 
-  List<Blog> _blogListData = [];
+  var _selectIndex = 0;
 
   var _blogListFlutter = [
     Blog(
         title: "Flutter环境搭建",
         content: Content(
           subtitle:
-              "Flutter 1.0 正式版发布，Flutter 是 Google 用以帮助开发者在 iOS 和 Android 两个平台开发高质量原生 UI 的移动 SDK。官方还创建了Flutter中文社区，从未见过如此用心，相信在不久的将来，一定有它的用武之地，来跟我一起研究，一起探讨，走起。",
+          "Flutter 1.0 正式版发布，Flutter 是 Google 用以帮助开发者在 iOS 和 Android 两个平台开发高质量原生 UI 的移动 SDK。官方还创建了Flutter中文社区，从未见过如此用心，相信在不久的将来，一定有它的用武之地，来跟我一起研究，一起探讨，走起。",
         ),
         importedUrl: "images/01.jpg",
         mediumUrl: "https://www.jianshu.com/p/ab2bbcdc54d0"),
@@ -28,7 +27,7 @@ class _BlogTabsState extends State<BlogTabs> {
         title: "为什么学习以及如何学习Flutter",
         content: Content(
             subtitle:
-                "在这篇文章中，我将谈谈为什么开始学习Flutter和Dart语言。我是如何做到这一点的，以及我保持专注的策略是什么。希望能帮助您开始使用Google的移动开发框架并继续您的旅程。"),
+            "在这篇文章中，我将谈谈为什么开始学习Flutter和Dart语言。我是如何做到这一点的，以及我保持专注的策略是什么。希望能帮助您开始使用Google的移动开发框架并继续您的旅程。"),
         importedUrl: "images/02.jpg",
         mediumUrl: "https://www.jianshu.com/p/0514ab661c96")
   ];
@@ -49,7 +48,7 @@ class _BlogTabsState extends State<BlogTabs> {
         title: "看Android的发展历程-谈一下当下最合适的架构",
         content: Content(
             subtitle:
-                "上次我们讲到一个好的架构有哪些优点，当然好的架构肯定还有其他方面的优势，我只是表达了自己的一些观点，有问题欢迎反驳，我们一起讨论。下面我们来看看当前版本的Android架构，如何做到最合适，也不一定是最合适，但大方向肯定要正确。我们先看看架构的历程。"),
+            "上次我们讲到一个好的架构有哪些优点，当然好的架构肯定还有其他方面的优势，我只是表达了自己的一些观点，有问题欢迎反驳，我们一起讨论。下面我们来看看当前版本的Android架构，如何做到最合适，也不一定是最合适，但大方向肯定要正确。我们先看看架构的历程。"),
         importedUrl: "images/android_ac.png",
         mediumUrl: "https://www.jianshu.com/p/d90dbed80a38")
   ];
@@ -63,32 +62,6 @@ class _BlogTabsState extends State<BlogTabs> {
         importedUrl: "images/portfolio_4.png",
         mediumUrl: "https://www.jianshu.com/p/d90dbed80a38")
   ];
-
-  _getBlogList(int index) {
-    switch (index) {
-      case 0:
-        return _blogListFlutter;
-        break;
-      case 1:
-        return _blogListAndroid;
-        break;
-      case 2:
-        return _blogListTest;
-        break;
-      case 3:
-        return _blogListTest;
-        break;
-      case 4:
-        return _blogListTest;
-        break;
-      case 5:
-        return _blogListTest;
-        break;
-      case 6:
-        return _blogListTest;
-        break;
-    }
-  }
 
   var _selectDataList = [
     "Flutter",
@@ -107,7 +80,6 @@ class _BlogTabsState extends State<BlogTabs> {
           onPressed: () {
             setState(() {
               _selectIndex = index;
-              _blogListData = _getBlogList(index);
             });
           },
           color: isSelected ? Color(0xFFffa41b) : Colors.white,
@@ -124,14 +96,39 @@ class _BlogTabsState extends State<BlogTabs> {
 
   @override
   void initState() {
-    _blogListData.addAll(_blogListFlutter);
     super.initState();
+  }
+
+  _getBlogTabItem(int index) {
+    switch (index) {
+      case 0:
+        return BlogTabItem(blogs: _blogListFlutter,);
+        break;
+      case 1:
+        return BlogTabItem(blogs: _blogListAndroid,);
+        break;
+      case 2:
+        return BlogTabItem(blogs: _blogListTest,);
+        break;
+      case 3:
+        return BlogTabItem(blogs: _blogListTest,);
+        break;
+      case 4:
+        return BlogTabItem(blogs: _blogListTest,);
+        break;
+      case 5:
+        return BlogTabItem(blogs: _blogListTest,);
+        break;
+      case 6:
+        return BlogTabItem(blogs: _blogListTest,);
+        break;
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 8,left: 8,right: 8),
+      padding: EdgeInsets.only(top: 8, left: 8, right: 8),
       color: Color(0xFFf1f3f4),
       child: Column(
         children: <Widget>[
@@ -146,9 +143,7 @@ class _BlogTabsState extends State<BlogTabs> {
             ),
           ),
           Expanded(
-            child: BlogTabItem(
-              blogs: _blogListData,
-            ),
+            child: _getBlogTabItem(_selectIndex),
           )
         ],
       ),

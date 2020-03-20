@@ -59,7 +59,7 @@ class _LauncherState extends State<Launcher> {
 
   @override
   Widget build(BuildContext context) {
-    SizeUtil.size = MediaQuery.of(context).size;
+
     return Scaffold(
         body: Container(
             height: double.infinity,

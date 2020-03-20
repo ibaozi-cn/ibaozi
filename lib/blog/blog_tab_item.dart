@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ibaozi/about/responsive_widget.dart';
-import 'package:ibaozi/about/text_styles.dart';
+import 'package:ibaozi/home/responsive_widget.dart';
 import 'package:ibaozi/blog/blog_widget.dart';
 import 'package:ibaozi/data/blog_model.dart';
 
@@ -19,13 +18,15 @@ class _BlogTabItemState extends State<BlogTabItem> {
   bool _loadingData = true;
   bool _showError = false;
 
+  bool showToTopBtn = false; //是否显示“返回到顶部”按钮
+
   @override
   void initState() {
     Future.delayed(Duration(seconds: 1), () {
       setState(() {
         _loadingData = false;
         _showError = false;
-    });
+      });
     });
     super.initState();
   }
