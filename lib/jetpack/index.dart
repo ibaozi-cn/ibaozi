@@ -190,11 +190,10 @@ class JetPackPageState extends State<JetPackPage> {
 
   _buildHorizontalListView(dataList) {
     return Container(
-      height: 200,
       child: ListView.builder(
         shrinkWrap: true,
         itemCount: dataList.length,
-        scrollDirection: Axis.horizontal,
+        scrollDirection: Axis.vertical,
         itemBuilder: (BuildContext context, int index) {
           Dependencies dependencies = dataList.elementAt(index);
           return DependenceItem(dependencies);
@@ -231,6 +230,20 @@ class JetPackPageState extends State<JetPackPage> {
   _buildSwitch(title, lights, onChange) {
     return Container(
       width: 200,
+      child: SwitchListTile(
+          activeColor: Color(0xFF50AFC0),
+          title: Text(
+            title,
+            style: TextStyles.sub_heading,
+          ),
+          value: lights,
+          onChanged: onChange),
+    );
+  }
+
+  _buildSwitchSmall(title, lights, onChange) {
+    return Container(
+      width: 150,
       child: SwitchListTile(
           activeColor: Color(0xFF50AFC0),
           title: Text(
@@ -297,6 +310,7 @@ class JetPackPageState extends State<JetPackPage> {
 
   _buildDropDownButtonList() {
     return Container(
+      margin: EdgeInsets.only(left: 16),
       child: DropdownButton(
           value: _selectItValue,
           hint: Text("please seclet minimum api"),
@@ -416,8 +430,11 @@ class JetPackPageState extends State<JetPackPage> {
               height: _sizeHeight,
             ),
             _buildTitle("Language", ""),
+            SizedBox(
+              height: _sizeHeight,
+            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 _buildSwitch("Java", true, (state) {}),
                 _buildSwitch("Kotlin", _lightsKotlin, (state) {
@@ -430,13 +447,11 @@ class JetPackPageState extends State<JetPackPage> {
             SizedBox(
               height: _sizeHeight,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                _buildTitle("Minimum API Level", ""),
-                _buildDropDownButtonList(),
-              ],
+            _buildTitle("Minimum API Level", ""),
+            SizedBox(
+              height: _sizeHeight,
             ),
+            _buildDropDownButtonList(),
             SizedBox(
               height: _sizeHeight,
             ),
