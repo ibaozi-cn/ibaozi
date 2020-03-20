@@ -13,16 +13,24 @@ class Dependencies {
     return 'Dependencies{title: $title, subTitle: $subTitle, url: $url}';
   }
 
-  static List<Dependencies> selectDependenciesDataForJetPack() {
+  static List<Dependencies> selectDependenciesDataForBasic() {
     List<Dependencies> list = [];
     list.add(Dependencies("Android KTX", "编写更简洁、惯用的 Kotlin 代码",
         "https://developer.android.google.cn/kotlin/ktx?hl=zh-cn"));
     list.add(Dependencies("多 dex 处理", "为具有多个 DEX 文件的应用提供支持",
         "https://developer.android.google.cn/studio/build/multidex?hl=zh-cn"));
+    list.add(Dependencies("Auto", "有助于开发 Android Auto 应用的组件",
+        "https://developer.android.com/auto"));
     list.add(Dependencies("检测", "从 Android Studio 中快速检测基于 Kotlin 或 Java 的代码",
         "https://developer.android.google.cn/studio/profile/benchmark?hl=zh-cn"));
     list.add(Dependencies("安全", "按照安全最佳做法读写加密文件和共享偏好设置。",
         "https://developer.android.google.cn/topic/security/data?hl=zh-cn"));
+    list.add(Dependencies("测试", "用于单元和运行时界面测试的 Android 测试框架",
+        "https://developer.android.com/training/testing/"));
+    return list;
+  }
+  static List<Dependencies> selectDependenciesDataForArc() {
+    List<Dependencies> list = [];
     list.add(Dependencies("数据绑定", "以声明方式将可观察数据绑定到界面元素",
         "https://developer.android.google.cn/topic/libraries/data-binding?hl=zh-cn"));
     list.add(Dependencies("Lifecycle", "管理您的 Activity 和 Fragment 生命周期",
@@ -39,6 +47,11 @@ class Dependencies {
         "https://developer.android.google.cn/topic/libraries/architecture/viewmodel?hl=zh-cn"));
     list.add(Dependencies("WorkManager", "管理您的 Android 后台作业",
         "https://developer.android.google.cn/topic/libraries/architecture/workmanager?hl=zh-cn"));
+    return list;
+  }
+
+  static List<Dependencies> selectDependenciesDataForBehavior() {
+    List<Dependencies> list = [];
     list.add(Dependencies("CameraX", "轻松地向应用中添加相机功能",
         "https://developer.android.google.cn/training/camerax?hl=zh-cn"));
     list.add(Dependencies("下载管理器", "安排和管理大量下载任务",
@@ -55,6 +68,11 @@ class Dependencies {
         "https://developer.android.google.cn/training/sharing/shareaction?hl=zh-cn"));
     list.add(Dependencies("切片", "创建可在应用外部显示应用数据的灵活界面元素",
         "https://developer.android.google.cn/guide/slices?hl=zh-cn"));
+    return list;
+  }
+
+  static List<Dependencies> selectDependenciesDataForUI() {
+    List<Dependencies> list = [];
     list.add(Dependencies("动画和过渡", "移动微件和在屏幕之间过渡",
         "https://developer.android.google.cn/training/animation?hl=zh-cn"));
     list.add(Dependencies("表情和符号", "在旧版平台上启用最新的表情符号字体",
@@ -67,4 +85,5 @@ class Dependencies {
         "https://developer.android.google.cn/training/material/palette-colors?hl=zh-cn"));
     return list;
   }
+
 }

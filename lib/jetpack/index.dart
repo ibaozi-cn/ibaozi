@@ -17,7 +17,12 @@ class JetPackPage extends StatefulWidget {
 }
 
 class JetPackPageState extends State<JetPackPage> {
-  var _dependenciesListData = Dependencies.selectDependenciesDataForJetPack();
+  var _dependenciesBasicListData =
+      Dependencies.selectDependenciesDataForBasic();
+  var _dependenciesArcListData = Dependencies.selectDependenciesDataForArc();
+  var _dependenciesListBehaviorData =
+      Dependencies.selectDependenciesDataForBehavior();
+  var _dependenciesUIListData = Dependencies.selectDependenciesDataForUI();
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +49,7 @@ class JetPackPageState extends State<JetPackPage> {
     var _size = 25.0;
     var _sizeHeight = 50.0;
     return Container(
-      margin: EdgeInsets.only(left: 32, top: 32),
+      margin: EdgeInsets.only(left: 16, top: 16),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -126,27 +131,102 @@ class JetPackPageState extends State<JetPackPage> {
             alignment: Alignment.topLeft,
             child: _buildTitle("Dependencies", ""),
           ),
-          GridView.builder(
-              shrinkWrap: true,
-              itemCount: _dependenciesListData.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  childAspectRatio: 1.65),
-              itemBuilder: _itemDependenceBuilderFunc)
+          Align(
+            alignment: Alignment.topLeft,
+            child: _buildSwitchForDependence("基础", _lightsBasic, (state) {
+              setState(() {
+                _lightsBasic = state;
+              });
+            }),
+          ),
+          _lightsBasic
+              ? _buildGridView(_dependenciesBasicListData)
+              : SizedBox(
+                  height: 1,
+                ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: _buildSwitchForDependence("架构", _lightsArc, (state) {
+              setState(() {
+                _lightsArc = state;
+              });
+            }),
+          ),
+          _lightsArc
+              ? _buildGridView(_dependenciesArcListData)
+              : SizedBox(
+                  height: 1,
+                ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: _buildSwitchForDependence("行为", _lightsBehavior, (state) {
+              setState(() {
+                _lightsBehavior = state;
+              });
+            }),
+          ),
+          _lightsBehavior
+              ? _buildGridView(_dependenciesListBehaviorData)
+              : SizedBox(
+                  height: 1,
+                ),
+          Align(
+            alignment: Alignment.topLeft,
+            child: _buildSwitchForDependence("界面", _lightsUi, (state) {
+              setState(() {
+                _lightsUi = state;
+              });
+            }),
+          ),
+          _lightsUi
+              ? _buildGridView(_dependenciesUIListData)
+              : SizedBox(
+                  height: 1,
+                ),
         ],
       ),
     );
   }
 
-  // builder
-  Widget _itemDependenceBuilderFunc(BuildContext context, int index) {
-    Dependencies dependencies = _dependenciesListData.elementAt(index);
-    return DependenceItem.name(dependencies);
+  _buildHorizontalListView(dataList) {
+    return Container(
+      height: 200,
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: dataList.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (BuildContext context, int index) {
+          Dependencies dependencies = dataList.elementAt(index);
+          return DependenceItem(dependencies);
+        },
+      ),
+    );
+  }
+
+  _buildGridView(dataList) {
+    return Container(
+      child: GridView.builder(
+          shrinkWrap: true,
+          itemCount: dataList.length,
+          physics: NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            mainAxisSpacing: 5,
+            crossAxisSpacing: 5,
+            childAspectRatio: 1.5,
+          ),
+          itemBuilder: (BuildContext context, int index) {
+            Dependencies dependencies = dataList.elementAt(index);
+            return DependenceItem(dependencies);
+          }),
+    );
   }
 
   bool _lightsKotlin = false;
+  bool _lightsBasic = true;
+  bool _lightsArc = false;
+  bool _lightsBehavior = false;
+  bool _lightsUi = false;
 
   _buildSwitch(title, lights, onChange) {
     return Container(
@@ -156,6 +236,20 @@ class JetPackPageState extends State<JetPackPage> {
           title: Text(
             title,
             style: TextStyles.sub_heading,
+          ),
+          value: lights,
+          onChanged: onChange),
+    );
+  }
+
+  _buildSwitchForDependence(title, lights, onChange) {
+    return Container(
+      width: 200,
+      child: SwitchListTile(
+          activeColor: Color(0xFF50AFC0),
+          title: Text(
+            title,
+            style: TextStyles.sub_heading.copyWith(color: Color(0xFF50AFC0)),
           ),
           value: lights,
           onChanged: onChange),
@@ -198,7 +292,6 @@ class JetPackPageState extends State<JetPackPage> {
       ),
     );
   }
-
 
   var _selectItValue;
 
@@ -289,10 +382,124 @@ class JetPackPageState extends State<JetPackPage> {
   }
 
   _buildMediumScreen(context) {
-    return Text("bbb");
+    return _buildSmallScreen(context);
   }
 
   _buildSmallScreen(context) {
-    return Text("aaa");
+    var _size = 25.0;
+    var _sizeHeight = 25.0;
+    return Container(
+        margin: EdgeInsets.only(left: 16, top: 16,right: 16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                _buildTitle("Project.", "name"),
+                _buildInput("default"),
+              ],
+            ),
+            SizedBox(
+              height: _sizeHeight,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                _buildTitle("Package.", "name"),
+                _buildInput("com.package.default"),
+              ],
+            ),
+            SizedBox(
+              height: _sizeHeight,
+            ),
+            _buildTitle("Language", ""),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                _buildSwitch("Java", true, (state) {}),
+                _buildSwitch("Kotlin", _lightsKotlin, (state) {
+                  setState(() {
+                    _lightsKotlin = state;
+                  });
+                }),
+              ],
+            ),
+            SizedBox(
+              height: _sizeHeight,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                _buildTitle("Minimum API Level", ""),
+                _buildDropDownButtonList(),
+              ],
+            ),
+            SizedBox(
+              height: _sizeHeight,
+            ),
+            _buildTitle("Architecture", ""),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: <Widget>[
+                  _buildArchitectureCard(
+                      0,
+                      "Mvvm-Architecture",
+                      "The practice of MVVM + Jetpack architecture in Android.",
+                      "https://github.com/qingmei2/MVVM-Architecture"),
+                  _buildArchitectureCard(
+                      1,
+                      "Android Architecture Components Basic Sample",
+                      "This sample showcases the following Architecture Components:\nRoom\nViewModels\nLiveData",
+                      "https://github.com/android/architecture-components-samples/tree/master/BasicSample")
+                ],
+              ),
+            ),
+            _buildTitle("Dependencies", ""),
+            _buildSwitchForDependence("基础", _lightsBasic, (state) {
+              setState(() {
+                _lightsBasic = state;
+              });
+            }),
+            _lightsBasic
+                ? _buildHorizontalListView(_dependenciesBasicListData)
+                : SizedBox(
+              height: 1,
+            ),
+            _buildSwitchForDependence("架构", _lightsArc, (state) {
+              setState(() {
+                _lightsArc = state;
+              });
+            }),
+            _lightsArc
+                ? _buildHorizontalListView(_dependenciesArcListData)
+                : SizedBox(
+              height: 1,
+            ),
+            _buildSwitchForDependence("行为", _lightsBehavior, (state) {
+              setState(() {
+                _lightsBehavior = state;
+              });
+            }),
+            _lightsBehavior
+                ? _buildHorizontalListView(_dependenciesListBehaviorData)
+                : SizedBox(
+              height: 1,
+            ),
+            _buildSwitchForDependence("界面", _lightsUi, (state) {
+              setState(() {
+                _lightsUi = state;
+              });
+            }),
+            _lightsUi
+                ? _buildHorizontalListView(_dependenciesUIListData)
+                : SizedBox(
+              height: 1,
+            ),
+          ],
+        ));
   }
 }

@@ -48,13 +48,13 @@ class HomePageState extends State<HomePage> {
       case 0:
         return JetPackPage();
       case 1:
-        return HomeBlogger();
+        return BlogTabs();
       case 2:
         return BlogTabs();
       case 3:
         return BlogTabs();
       case 4:
-        return BlogTabs();
+        return HomeBlogger();
       case 5:
         return LayoutBuilder(builder: (context, constraints) {
           return _buildBody(context, constraints);

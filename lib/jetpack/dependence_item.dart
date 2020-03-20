@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:ibaozi/jetpack/dependencies.dart';
 
 class DependenceItem extends StatefulWidget {
+
   Dependencies _dependencies;
 
-  DependenceItem.name(this._dependencies);
+  DependenceItem(this._dependencies);
 
   @override
   State<StatefulWidget> createState() {
