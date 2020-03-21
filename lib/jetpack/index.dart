@@ -648,8 +648,8 @@ class JetPackPageState extends State<JetPackPage> {
 
   void postHttp(appName, packageName, minSdk) async {
     try {
-      var url = "http://127.0.0.1:3001/generator";
-//      var url = "https://bot.csrbobo.com/generator";
+//      var url = "http://127.0.0.1:3001/generator";
+      var url = "https://bot.csrbobo.com/generator";
       var params = Map<String, String>();
       params["app_name"] = appName;
       params["package_name"] = packageName;
