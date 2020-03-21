@@ -1,11 +1,19 @@
+import 'dart:convert';
+import 'dart:html';
+
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
+import 'package:giffy_dialog/giffy_dialog.dart';
+import 'package:ibaozi/const/gradient_const.dart';
 import 'package:ibaozi/home/responsive_widget.dart';
 import 'package:ibaozi/home/text_styles.dart';
 import 'package:ibaozi/jetpack/dependence_item.dart';
 import 'package:ibaozi/jetpack/dependencies.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:http/http.dart' as http;
 
 import 'constant.dart';
 
@@ -24,10 +32,16 @@ class JetPackPageState extends State<JetPackPage> {
       Dependencies.selectDependenciesDataForBehavior();
   var _dependenciesUIListData = Dependencies.selectDependenciesDataForUI();
 
+  var _appName = "";
+  var _packageName = "";
+  var _minSdk = "";
+
+  var _toast = "目前处于测试阶段，使用中遇到问题，欢迎反馈哦，为了缓解服务器压力，做了一定的限流哦，理解万岁，珍惜使用次数哦，祝您生活愉快哦";
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      return _buildBody(context, constraints);
+      return _buildRootView(context, constraints);
     });
   }
 
@@ -45,6 +59,80 @@ class JetPackPageState extends State<JetPackPage> {
     );
   }
 
+  _buildRootView(BuildContext context, BoxConstraints constraints) {
+    return Scaffold(
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          child: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                  minWidth: constraints.maxWidth,
+                  minHeight: constraints.maxHeight),
+              child: ResponsiveWidget(
+                largeScreen: _buildLargeScreen(context),
+                mediumScreen: _buildMediumScreen(context),
+                smallScreen: _buildSmallScreen(context),
+              ),
+            ),
+          ),
+        ),
+        floatingActionButton: Container(
+          decoration: BoxDecoration(
+            gradient: TRANSPARENT_BACKGROUND,
+          ),
+          child: FloatingActionButton(
+            backgroundColor: Color(0xFF50AFC0),
+            hoverColor: Color(0xFF90AFC9),
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (_) => AssetGiffyDialog(
+                        buttonCancelColor: Colors.black26,
+                        image: Image.asset('images/programer.gif'),
+                        title: Text(
+                          '确定要生成吗？',
+                          style: TextStyle(
+                              fontSize: 22.0, fontWeight: FontWeight.w600),
+                        ),
+                        description: Text(
+                          _toast,
+                          textAlign: TextAlign.center,
+                          style: TextStyles.body.copyWith(fontSize: 18),
+                        ),
+                        entryAnimation: EntryAnimation.RIGHT,
+                        buttonOkColor: Color(0xFF50AFC0),
+                        onOkButtonPressed: () {
+                          Navigator.of(context).pop();
+                          print(_appName);
+                          print(_packageName);
+                          print(_minSdk);
+                          if (_appName.isEmpty) {
+                            BotToast.showText(text: "请输入项目名称");
+                          } else {
+                            if (_packageName.isEmpty) {
+                              BotToast.showText(text: "请输入包名");
+                            } else {
+                              if (!_packageName.contains(".")) {
+                                BotToast.showText(
+                                    text: "请输入正确的包名格式 如: com.aaa.bbb");
+                              } else {
+                                postHttp(_appName, _packageName, _minSdk);
+                                BotToast.showLoading();
+                              }
+                            }
+                          }
+                        },
+                      ));
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[Icon(Icons.android), Text("完成")],
+            ),
+          ),
+        ));
+  }
+
   _buildLargeScreen(context) {
     var _size = 25.0;
     var _sizeHeight = 50.0;
@@ -60,7 +148,7 @@ class JetPackPageState extends State<JetPackPage> {
               SizedBox(
                 width: _size,
               ),
-              _buildInput("default"),
+              _buildInputAppName("application"),
               SizedBox(
                 width: _size,
               ),
@@ -68,7 +156,7 @@ class JetPackPageState extends State<JetPackPage> {
               SizedBox(
                 width: _size,
               ),
-              _buildInput("com.package.default"),
+              _buildInputPackageName("com.packages.app"),
             ],
           ),
           SizedBox(
@@ -108,7 +196,7 @@ class JetPackPageState extends State<JetPackPage> {
           ),
           Align(
             alignment: Alignment.topLeft,
-            child: _buildTitle("Architecture", ""),
+            child: _buildTitle("Architecture", "  以下内容努力适配中"),
           ),
           Row(
             children: <Widget>[
@@ -129,7 +217,10 @@ class JetPackPageState extends State<JetPackPage> {
           ),
           Align(
             alignment: Alignment.topLeft,
-            child: _buildTitle("Dependencies", ""),
+            child: _buildTitle("Dependencies", "  以下内容努力适配中"),
+          ),
+          SizedBox(
+            height: _sizeHeight,
           ),
           Align(
             alignment: Alignment.topLeft,
@@ -270,14 +361,46 @@ class JetPackPageState extends State<JetPackPage> {
     );
   }
 
-  _buildInput(label) {
+  _buildInputAppName(label) {
     return Container(
       width: 200,
       child: TextField(
+        inputFormatters: [
+          WhitelistingTextInputFormatter(
+            RegExp("[a-zA-Z]|[0-9]")
+          ),
+          LengthLimitingTextInputFormatter(100)
+        ],
         keyboardType: TextInputType.text,
         decoration: InputDecoration(hintText: label),
-        onChanged: (text) {},
-        autofocus: true,
+        onChanged: (text) {
+          setState(() {
+            _appName = text;
+          });
+        },
+        autofocus: false,
+      ),
+    );
+  }
+
+  _buildInputPackageName(label) {
+    return Container(
+      width: 200,
+      child: TextField(
+        inputFormatters: [
+          WhitelistingTextInputFormatter(
+              RegExp("[a-zA-Z]|[0-9]|[.]")
+          ),
+          LengthLimitingTextInputFormatter(100)
+        ],
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(hintText: label),
+        onChanged: (text) {
+          setState(() {
+            _packageName = text;
+          });
+        },
+        autofocus: false,
       ),
     );
   }
@@ -320,6 +443,7 @@ class JetPackPageState extends State<JetPackPage> {
             setState(() {
               _selectItValue = button;
             });
+            _minSdk = button;
           }),
     );
   }
@@ -414,7 +538,7 @@ class JetPackPageState extends State<JetPackPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 _buildTitle("Project.", "name"),
-                _buildInput("default"),
+                _buildInputAppName("application"),
               ],
             ),
             SizedBox(
@@ -424,7 +548,7 @@ class JetPackPageState extends State<JetPackPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 _buildTitle("Package.", "name"),
-                _buildInput("com.package.default"),
+                _buildInputPackageName("com.packages.app"),
               ],
             ),
             SizedBox(
@@ -475,6 +599,9 @@ class JetPackPageState extends State<JetPackPage> {
               ),
             ),
             _buildTitle("Dependencies", ""),
+            SizedBox(
+              height: _sizeHeight,
+            ),
             _buildSwitchForDependence("基础", _lightsBasic, (state) {
               setState(() {
                 _lightsBasic = state;
@@ -517,5 +644,36 @@ class JetPackPageState extends State<JetPackPage> {
                   ),
           ],
         ));
+  }
+
+  void postHttp(appName, packageName, minSdk) async {
+    try {
+      var url = "http://127.0.0.1:3001/generator";
+//      var url = "https://bot.csrbobo.com/generator";
+      var params = Map<String, String>();
+      params["app_name"] = appName;
+      params["package_name"] = packageName;
+      params["min_sdk"] = minSdk;
+      var client = http.Client();
+      http.Response response = await client.post(url, body: params);
+      BotToast.closeAllLoading();
+      var body = response.body;
+      var result = JsonDecoder().convert(body) as Map;
+      print(result["status"]);
+      print(result["msg"]);
+      print(result["data"]);
+      if (result["status"] == "200") {
+        BotToast.showText(text: "地址已生成，已自动放至剪切板");
+        Clipboard.setData(ClipboardData(text: result["data"]));
+        launch(result["data"]);
+      } else {
+        BotToast.showText(
+            text: result["msg"], duration: Duration(milliseconds: 3000));
+      }
+    } catch (e) {
+      print(e.toString());
+      BotToast.showText(text: e.toString());
+      BotToast.closeAllLoading();
+    }
   }
 }
