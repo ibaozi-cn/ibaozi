@@ -35,4 +35,10 @@
 
 等等..
 
+# 博客介绍其他细节
+
+[一个在线的Jetpack生成工具](https://www.jianshu.com/p/19f97654c451)
+
+
+
 
