@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:html';
 
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/cupertino.dart';
@@ -60,6 +59,7 @@ class JetPackPageState extends State<JetPackPage> {
   }
 
   _buildRootView(BuildContext context, BoxConstraints constraints) {
+
     return Scaffold(
         body: Container(
           height: double.infinity,

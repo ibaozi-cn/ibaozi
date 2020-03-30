@@ -35,10 +35,16 @@ class HomePageState extends State<HomePage> {
                 : (ScreenUtil.getInstance().setWidth(6))), //144
         child: Scaffold(
 //          backgroundColor: Colors.transparent,
-          appBar: _buildAppBar(context),
-          drawer: _buildDrawer(context),
-          body: _getDrawerItemWidget(_selectedDrawerIndex),
-        ),
+            appBar: _buildAppBar(context),
+            drawer: _buildDrawer(context),
+            body: Column(
+              children: <Widget>[
+                Expanded(
+                  child: _getDrawerItemWidget(_selectedDrawerIndex),
+                ),
+                _buildFooter(context)
+              ],
+            )),
       ),
     );
   }
@@ -105,9 +111,7 @@ class HomePageState extends State<HomePage> {
       MaterialButton(
         child: Text(
           Strings.menu_jetpack,
-          style: TextStyles.menu_item.copyWith(
-            color: Colors.red
-          ),
+          style: TextStyles.menu_item.copyWith(color: Colors.red),
         ),
         onPressed: () {
           setState(() {
@@ -138,7 +142,6 @@ class HomePageState extends State<HomePage> {
             _selectedDrawerIndex = 2;
           });
           if (ResponsiveWidget.isSmallScreen(context)) Navigator.pop(context);
-
         },
       ),
       MaterialButton(
@@ -151,7 +154,6 @@ class HomePageState extends State<HomePage> {
             _selectedDrawerIndex = 3;
           });
           if (ResponsiveWidget.isSmallScreen(context)) Navigator.pop(context);
-
         },
       ),
       MaterialButton(
@@ -164,7 +166,6 @@ class HomePageState extends State<HomePage> {
             _selectedDrawerIndex = 4;
           });
           if (ResponsiveWidget.isSmallScreen(context)) Navigator.pop(context);
-
         },
       ),
       MaterialButton(
@@ -179,7 +180,6 @@ class HomePageState extends State<HomePage> {
             _selectedDrawerIndex = 5;
           });
           if (ResponsiveWidget.isSmallScreen(context)) Navigator.pop(context);
-
         },
       ),
     ];
@@ -227,7 +227,7 @@ class HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          _buildFooter(context)
+//          _buildFooter(context)
         ],
       ),
     );
@@ -247,7 +247,7 @@ class HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          _buildFooter(context)
+//          _buildFooter(context)
         ],
       ),
     );
@@ -514,9 +514,8 @@ class HomePageState extends State<HomePage> {
   Widget _buildFooter(BuildContext context) {
     return Column(
       children: <Widget>[
-        Divider(),
         Padding(
-          padding: EdgeInsets.all(12.0),
+          padding: EdgeInsets.all(6.0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -537,10 +536,16 @@ class HomePageState extends State<HomePage> {
   }
 
   Widget _buildCopyRightText(BuildContext context) {
-    return Text(
-      Strings.rights_reserved,
-      style: TextStyles.body1.copyWith(
-        fontSize: ResponsiveWidget.isSmallScreen(context) ? 8 : 10.0,
+    return InkWell(
+      onTap: () {
+        launch("http://www.beian.miit.gov.cn/");
+      },
+      child: Text(
+        Strings.rights_reserved,
+        style: TextStyles.body1.copyWith(
+          color: Colors.blue,
+          fontSize: ResponsiveWidget.isSmallScreen(context) ? 8 : 10.0,
+        ),
       ),
     );
   }

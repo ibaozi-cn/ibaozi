@@ -6,5 +6,5 @@
 #rm build/web.zip
 
 git add .
-git commit -m "【update web style】"
+git commit -m "【添加备案号】"
 git push origin dev

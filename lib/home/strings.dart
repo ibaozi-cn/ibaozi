@@ -12,7 +12,7 @@ class Strings {
   static const String summary = '建立这个网站的初心就是想让每个人的简历有个落脚点，来吧你也可以跟我一样，欢迎投递简历入住哦';
   static const String experience = '经验';
   static const String skills_i_have = '技能';
-  static const String rights_reserved = '© 2020 IBAOZI.CN ZZY.';
+  static const String rights_reserved = '京ICP备案20002589号-1';
 
   // menu items
   static const String menu_jetpack = 'Jetpack Store';
